@@ -17,8 +17,17 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
+from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.home),
+    path('about/', views.about),
+    path('contact/', views.contact),
+    path('founders/', views.founders),
+    path('honoured/', views.honoured),
+    # gallery
+    path('gallery/', views.gallery),
+    path('gallery_microbit_meetup_2022/', views.gallery_microbit_meetup_2022),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
